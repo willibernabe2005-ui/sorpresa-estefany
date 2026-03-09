@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Jazmín</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#ff9ecf,#ffd6e7);
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+color:white;
+text-align:center;
+}
+
+.container{
+background:rgba(255,255,255,0.15);
+padding:40px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+animation:aparecer 2s ease;
+max-width:600px;
+}
+
+h1{
+font-size:40px;
+}
+
+h2{
+margin-top:20px;
+font-size:28px;
+}
+
+p{
+font-size:18px;
+line-height:1.6;
+}
+
+@keyframes aparecer{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* corazones */
+.heart{
+position:absolute;
+color:#ff3b7a;
+font-size:20px;
+animation:flotar 6s linear infinite;
+}
+
+@keyframes flotar{
+0%{transform:translateY(100vh) scale(1);}
+100%{transform:translateY(-10vh) scale(1.5);}
+}
+
+/* flores */
+.flower{
+position:absolute;
+font-size:22px;
+animation:flotar 8s linear infinite;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Para ti, Jazmín 🌸</h1>
+
+<p>
+Hoy, en el Día de la Mujer, quiero dedicarte
+unas palabras especiales.
+</p>
+
+<p>
+Jazmín, eres una persona increíble,
+con una forma de ser que ilumina a quienes te rodean.
+Tu alegría, tu fuerza y tu sonrisa
+hacen que todo sea más bonito.
+</p>
+
+<p>
+Quiero que sepas que te quiero muchísimo
+y que de verdad agradezco que estés en mi vida.
+Tu presencia hace mis días más especiales.
+</p>
+
+<p>
+Espero que hoy tengas un día lleno de sonrisas,
+momentos lindos y muchas razones para sentirte feliz.
+</p>
+
+<h2>¡Feliz Día de la Mujer! 💐</h2>
+
+<p>Con mucho cariño 💖</p>
+
+</div>
+
+<script>
+function crearCorazon(){
+let heart=document.createElement("div")
+heart.className="heart"
+heart.innerHTML="❤️"
+heart.style.left=Math.random()*100+"vw"
+heart.style.animationDuration=(Math.random()*3+3)+"s"
+document.body.appendChild(heart)
+
+setTimeout(()=>{heart.remove()},6000)
+}
+
+setInterval(crearCorazon,400)
+
+function crearFlor(){
+let flower=document.createElement("div")
+flower.className="flower"
+flower.innerHTML="🌸"
+flower.style.left=Math.random()*100+"vw"
+flower.style.animationDuration=(Math.random()*5+4)+"s"
+document.body.appendChild(flower)
+
+setTimeout(()=>{flower.remove()},8000)
+}
+
+setInterval(crearFlor,900)
+</script>
+
+</body>
+</html>
